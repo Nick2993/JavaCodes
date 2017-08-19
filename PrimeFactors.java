@@ -1,6 +1,3 @@
-
-import java.util.Scanner;
-
 /*********************************************************************
 * Purpose: A program to compute Factors of a number N using prime factorization
 *method.
@@ -8,7 +5,7 @@ import java.util.Scanner;
 * @version  7.0
 * @since    15-08-2017
 ************************************************************************/
-
+import java.util.Scanner;
 public class PrimeFactors 
 {
 	public static boolean isPrime(int i)
