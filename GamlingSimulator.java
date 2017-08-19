@@ -9,82 +9,56 @@ simulation N times.
 * @since 13-08-2017
 *
 ****************************************************************************************************/
-import java.io.*;
-import java.util.*;
-import java.math.*;
-class bet
+//import java.io.*;
+import java.util.Scanner;
+class Gamling
 {
-    int counter1=0,counter2=0;
-    int more=0;
-    Scanner sc=new Scanner(System.in);
-
-     public void Display(int n)
-
+    
+    int i,rand,t=0;
+void display(int stake,int goal,int trials)
 {
-	System.out.println(" How much stack you want to spend on game?");
-	int m= sc.nextInt();
-	int nm=n-m;
-	int a[]= new int[n];
-        System.out.println("Your Result is");
-	      for(int i=0;i<m;i++)
-	  {
- 		a[i]=1+(int)(Math.random()*m);
-              if(a[i]>m/2)
-                {
-
-                System.out.println("win");
-                }
-              else
-                {
-
-                System.out.println("loss");
-                }
-	  }
-	for(int j=0;j<m;j++)
-	{
-		if(a[j]>m/2)
-		{
-		nm+=1;
-		counter1++;
-		}
-			else
-			{
-			n-=1;
-			counter2++;
-			}
-	}
-                                                                                          System.out.println("Total winnings is:"+counter1);
-                                                                                          System.out.println("Total loss is:"+counter2);
-					                                                  System.out.println("Total remaining stack is:"+nm);
-
-                                                     System.out.println("press one if you want to play one more game?");
-                                                     more=sc.nextInt();
-                                                                                        if(more==1)
-                                                                                         {  
-                                                                                           Display(n);
-                                                                                          }
-                                                                                         else
-					                                                  {
-                                                                                          System.out.println("Total winnings is:"+counter1);
-                                                                                          System.out.println("Total loss is:"+counter2);
-					                                                  System.out.println("Total remaining stack is:"+nm);				
-                                                                                         
-
-                                                                                         }
+    
+for(i=0;i<=trials;i++)
+{
+ rand= (int)(1+(Math.random()*stake));
+ if(rand>stake/2)
+ {
+     stake++;
+     
+ }
 
 
-
+if (stake==goal)
+{
+    System.out.println("Congratulation!!!! You won!!! After" +i+"trails");
+    
+    i=trials;
+}
+if(trials==i)
+{
+    System.out.println("You loss ");
+    
+    
+}
+}
 }
 }
 
-class GamlingSimulator
+    
+class GamlingSimulation
 {
-            public static void main(String... args)
-           {
-            Scanner sc=new Scanner(System.in);
-            System.out.println( " Enter how much stack do you have??? ");
-	    int n=sc.nextInt();
-            bet b=new bet();
-            b.Display(n);
-            }
-}
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the STAKE");
+        int s=sc.nextInt();
+        System.out.println("Enter GOAL");
+        int g=sc.nextInt();
+        System.out.println("Enter No. of TRAILS");
+        int t=sc.nextInt();
+        Gamling game=new Gamling();
+        game.display(s,g,t);
+        
+        
+    }
+    }
