@@ -1,17 +1,28 @@
 import java.util.*;
-class FlipCoin
-{
-	public static void main(String args[])
-	{
-		if(Math.random()>0.5)
+public class FlipCoin 
+{ 
+   public static void main(String[] args) 
+    {
+        int head=0,tail=0;
+        double rand;
+	Scanner sc=new Scanner(System.in);
+	int FlipTimes= sc.nextInt();
+	int n=FlipTimes;
+		while(FlipTimes!=0)
 		{
-			System.out.println("HEAD");
+  		  rand=Math.random();
+  			  if(rand>0.5)
+   			 {
+    			    head++;
+  		         }
+   			 else
+  			 {
+     			   tail++;
+ 			 }
+		FlipTimes--;
 		}
-		else
-		{
-		
-			System.out.println("TAIL");
-		}
-	}
-
+     System.out.println("Head Percentage is:"+(head*100)/n);
+     System.out.println("Tail Percentage is:"+(tail*100)/n);
+    }
 }
+    
