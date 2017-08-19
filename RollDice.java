@@ -1,5 +1,5 @@
 import java.util.*;
-class HomeWork
+class RollDice
 {
 	public static void main(String ar[])
 	{
